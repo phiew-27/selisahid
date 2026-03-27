@@ -24,9 +24,17 @@ button{margin-top:15px;padding:10px;width:100%;border:none;border-radius:10px;ba
 function kirim(){
 let nama=document.getElementById("nama").value;
 
+if(nama===""){
+alert("Isi nama dulu");
+return;
+}
+
 let link="https://sahidhaeriyah.netlify.app/?to="+encodeURIComponent(nama);
 
-let pesan="Undangan:\n\n"+link;
+let pesan=
+"Kepada Yth.\nBapak/Ibu/Saudara/i\n*"+nama+"*\n\n"+
+"Tanpa mengurangi rasa hormat, kami mengundang Anda untuk menghadiri acara pernikahan kami.\n\n"+
+link+"\n\nTerima kasih\n\nSahid & Haeriyah";
 
 window.location.href="https://wa.me/?text="+encodeURIComponent(pesan);
 }
