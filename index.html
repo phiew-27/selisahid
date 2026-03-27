@@ -50,7 +50,7 @@ p{color:#555}
 
 /* BUTTON */
 .btn{
-margin-top:10px;padding:10px 20px;
+margin-top:20px;padding:10px 20px;
 border:none;border-radius:20px;
 background:#7a6f4b;color:white;
 }
@@ -66,12 +66,15 @@ box-shadow:0 -2px 10px rgba(0,0,0,0.1);
 .menu button{
 opacity:0.5;
 transition:0.3s;
-padding:5px;border-radius:10px;
+padding:5px;
+border-radius:10px;
 background:none;border:none;color:#7a6f4b;
 }
 
 .menu button.active{
-opacity:1;background:#7a6f4b;color:#fff;
+opacity:1;
+background:#7a6f4b;
+color:#fff;
 box-shadow:0 0 10px rgba(0,0,0,0.2);
 transform:scale(1.1);
 }
@@ -83,19 +86,40 @@ transform:scale(1.1);
 .right{opacity:0;transform:translateX(120px)}
 .left2{opacity:0;transform:translateX(-120px)}
 
-.slide.active .left{opacity:1;transform:translateX(0);transition:1s;}
-.slide.active .right{opacity:1;transform:translateX(0);transition:1s 0.3s;}
-.slide.active .left2{opacity:1;transform:translateX(0);transition:1s 0.6s;}
+.slide.active .left{opacity:1;transform:translateX(0);transition:1s ease;}
+.slide.active .right{opacity:1;transform:translateX(0);transition:1s ease 0.3s;}
+.slide.active .left2{opacity:1;transform:translateX(0);transition:1s ease 0.6s;}
 
-/* FONT */
-.nama{font-family:'Great Vibes';font-size:42px;color:#7a6f4b;}
-.desc{font-size:14px;line-height:1.6;}
+/* COUPLE */
+.nama{
+font-family:'Great Vibes', cursive;
+font-size:42px;
+color:#7a6f4b;
+margin:10px 0;
+}
+.desc{
+font-size:14px;color:#555;line-height:1.6;
+}
 
-.title{font-family:'Great Vibes';font-size:30px;color:#7a6f4b;}
+/* TITLE */
+.title{
+font-family:'Great Vibes', cursive;
+font-size:32px;
+color:#7a6f4b;
+margin-bottom:10px;
+}
 
 /* COUNTDOWN */
-.countdown{display:flex;gap:10px;justify-content:center;margin:10px;}
-.box{background:#7a6f4b;color:#fff;padding:10px;border-radius:10px;}
+.countdown{
+display:flex;gap:10px;justify-content:center;margin:15px 0;
+}
+.box{
+background:#7a6f4b;color:#fff;padding:10px;border-radius:10px;min-width:60px;
+}
+.box span{display:block;font-size:18px;font-weight:bold;}
+.box small{font-size:10px;}
+
+h3{margin-top:5px;font-weight:500;}
 </style>
 </head>
 
@@ -113,7 +137,7 @@ transform:scale(1.1);
 <h1 class="right">&</h1>
 <h1 class="left2">Haeriyah</h1>
 
-<p>Kepada Yth:</p>
+<p style="margin-top:20px">Kepada Yth:</p>
 <p><b>Bpk/Ibu/Saudara/i</b></p>
 <h3 id="guest">Nama Tamu</h3>
 
@@ -125,8 +149,9 @@ transform:scale(1.1);
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<h2 class="title">Assalamualaikum Wr. Wb</h2>
+<h2>Assalamualaikum Wr. Wb</h2>
 <p>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan..."</p>
+<p><i>(QS. Ar-Rum: 21)</i></p>
 </div>
 </div>
 
@@ -137,12 +162,12 @@ transform:scale(1.1);
 <p><b>BRIDE & GROOM</b></p>
 
 <h1 class="nama">Sahid</h1>
-<p class="desc">Putra ke-3 dari Bpk. Saepudin & Ibu Liah</p>
+<p class="desc">Putra ke-3 dari Bpk. Saepudin dan Ibu Liah</p>
 
 <h2>&</h2>
 
 <h1 class="nama">Haeriyah</h1>
-<p class="desc">Putri bungsu dari Alm. Bpk. Andi & Ibu Sarmanah</p>
+<p class="desc">Putri bungsu dari Alm. Bpk. Andi dan Ibu Sarmanah</p>
 </div>
 </div>
 
@@ -150,11 +175,11 @@ transform:scale(1.1);
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<h2 class="title">Akad Nikah</h2>
-<p class="desc">Jumat, 3 April 2026<br>08.00 WIB</p>
+<h2 class="title">Akad</h2>
+<p>Jumat, 3 April 2026<br>08:00 WIB<br>Kp Citeras RT 04 RW 06</p>
 
 <h2 class="title">Resepsi</h2>
-<p class="desc">13.00 WIB</p>
+<p>Jumat, 3 April 2026<br>13:00 WIB<br>Kp Citeras RT 04 RW 06</p>
 </div>
 </div>
 
@@ -163,7 +188,7 @@ transform:scale(1.1);
 <div class="floral"></div>
 <div class="content">
 <h2 class="title">Lokasi</h2>
-<a class="btn" href="https://maps.google.com">Maps</a>
+<a class="btn" href="https://maps.google.com">Google Maps</a>
 </div>
 </div>
 
@@ -171,19 +196,15 @@ transform:scale(1.1);
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<h2 class="title">Ucapan & Doa</h2>
+<h2 class="title">RSVP</h2>
 
 <div class="countdown">
-<div class="box"><span id="d">0</span>Hari</div>
-<div class="box"><span id="h">0</span>Jam</div>
-<div class="box"><span id="m">0</span>Menit</div>
+<div class="box"><span id="d">0</span><small>Hari</small></div>
+<div class="box"><span id="h">0</span><small>Jam</small></div>
+<div class="box"><span id="m">0</span><small>Menit</small></div>
 </div>
 
-<input id="nama" placeholder="Nama"><br>
-<textarea id="pesan" placeholder="Ucapan"></textarea><br>
-<button class="btn" onclick="kirim()">Kirim</button>
-
-<div id="list"></div>
+<a class="btn" href="https://wa.me/6281234567890">Konfirmasi</a>
 </div>
 </div>
 
@@ -192,7 +213,12 @@ transform:scale(1.1);
 <div class="floral"></div>
 <div class="content">
 <h2 class="title">Mengundang</h2>
-<p class="desc">Keluarga besar dll...</p>
+
+<p><b>Pihak Wanita</b></p>
+<p>Keluarga besar Alm Abah Haji Sarmada Citeras<br>Keluarga besar Alm Abah Askum Hegarsari</p>
+
+<p><b>Pihak Pria</b></p>
+<p>Keluarga besar Alm Abah H. Rusdi<br>Keluarga besar Alm Abah Sukri</p>
 </div>
 </div>
 
@@ -200,21 +226,22 @@ transform:scale(1.1);
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<p>Merupakan suatu kehormatan...</p>
+<p>Merupakan suatu kehormatan dan kebahagiaan apabila Bpk/Ibu/Saudara/i berkenan hadir</p>
+<p><b>Salam Hormat Kami Kedua Mempelai</b></p>
 <h2 class="title">Sahid & Haeriyah</h2>
 </div>
 </div>
 
 <!-- MENU -->
 <div class="menu">
-<button class="active" onclick="go(0)">●</button>
-<button onclick="go(1)">●</button>
-<button onclick="go(2)">●</button>
-<button onclick="go(3)">●</button>
-<button onclick="go(4)">●</button>
-<button onclick="go(5)">●</button>
-<button onclick="go(6)">●</button>
-<button onclick="go(7)">●</button>
+<button class="active" onclick="go(0)"><span class="material-icons">mail</span></button>
+<button onclick="go(1)"><span class="material-icons">auto_awesome</span></button>
+<button onclick="go(2)"><span class="material-icons">favorite</span></button>
+<button onclick="go(3)"><span class="material-icons">event</span></button>
+<button onclick="go(4)"><span class="material-icons">location_on</span></button>
+<button onclick="go(5)"><span class="material-icons">chat</span></button>
+<button onclick="go(6)"><span class="material-icons">groups</span></button>
+<button onclick="go(7)"><span class="material-icons">check_circle</span></button>
 </div>
 
 <script>
@@ -224,23 +251,28 @@ const buttons=document.querySelectorAll('.menu button');
 function go(i){
 slides.forEach(s=>s.classList.remove('active'));
 buttons.forEach(b=>b.classList.remove('active'));
+
 slides[i].classList.add('active');
 buttons[i].classList.add('active');
+
 document.getElementById("music").play();
 }
 
-/* countdown */
-setInterval(()=>{
-let d=new Date("April 3 2026")-new Date();
-document.getElementById("d").innerHTML=Math.floor(d/86400000);
+/* COUNTDOWN */
+const targetDate=new Date("April 3, 2026 08:00:00").getTime();
+setInterval(function(){
+const now=new Date().getTime();
+const d=targetDate-now;
+
+document.getElementById("d").innerHTML=Math.floor(d/(1000*60*60*24));
+document.getElementById("h").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60));
+document.getElementById("m").innerHTML=Math.floor((d%(1000*60*60))/(1000*60));
 },1000);
 
-/* komentar */
-function kirim(){
-let n=document.getElementById("nama").value;
-let p=document.getElementById("pesan").value;
-document.getElementById("list").innerHTML+="<p><b>"+n+"</b><br>"+p+"</p>";
-}
+/* NAMA TAMU */
+const params=new URLSearchParams(window.location.search);
+const to=params.get("to");
+if(to){document.getElementById("guest").innerHTML=to;}
 </script>
 
 </body>
