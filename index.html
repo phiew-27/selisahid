@@ -60,20 +60,6 @@ margin:auto;
 
 .countdown{display:flex;gap:10px;margin:15px 0}
 .box{background:#7a6f4b;color:#fff;padding:10px;border-radius:10px}
-
-#vipBox{
-display:none;
-position:fixed;
-bottom:90px;
-left:50%;
-transform:translateX(-50%);
-background:#fff;
-padding:15px;
-border-radius:15px;
-box-shadow:0 0 20px rgba(0,0,0,0.2);
-z-index:9999;
-text-align:center;
-}
 </style>
 </head>
 
@@ -148,11 +134,17 @@ supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih 
 <p>
 Jumat, 3 April 2026<br>
 08:00 WIB<br>
-Kp Citeras RT 04 RW 06
+Kp Citeras RT 04 RW 06<br>
+Desa Lewibatu, Kecamatan Rumpin
 </p>
 
 <h2 class="title">Resepsi</h2>
-<p>13:00 WIB</p>
+<p>
+Jumat, 3 April 2026<br>
+Pukul 13.00 WIB s/d selesai<br>
+Kp Citeras RT 04 RW 06<br>
+Desa Lewibatu, Kecamatan Rumpin
+</p>
 
 </div>
 </div>
@@ -173,9 +165,9 @@ Kp Citeras RT 04 RW 06
 <h2 class="title">RSVP</h2>
 
 <div class="countdown">
-<div class="box"><span id="d"></span></div>
-<div class="box"><span id="h"></span></div>
-<div class="box"><span id="m"></span></div>
+<div class="box"><span id="d">0</span></div>
+<div class="box"><span id="h">0</span></div>
+<div class="box"><span id="m">0</span></div>
 </div>
 
 <a class="btn" onclick="kirimWA()">Kirim Undangan</a>
@@ -219,9 +211,7 @@ Pemuda Cikasungka
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<p>
-Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila berkenan hadir
-</p>
+<p>Merupakan suatu kehormatan bagi kami apabila berkenan hadir</p>
 <h2 class="title">Sahid & Haeriyah</h2>
 </div>
 </div>
@@ -238,13 +228,6 @@ Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila berkenan hadir
 <button onclick="go(7)"><span class="material-icons">check_circle</span></button>
 </div>
 
-<!-- VIP -->
-<div id="vipBox">
-<h3>Buat Undangan</h3>
-<input id="vipNama" placeholder="Nama"><br><br>
-<button onclick="vipWA()">Kirim WhatsApp</button>
-</div>
-
 <script>
 const slides=document.querySelectorAll('.slide');
 const btn=document.querySelectorAll('.menu button');
@@ -257,34 +240,24 @@ btn[i].classList.add('active');
 document.getElementById("music").play();
 }
 
-const params=new URLSearchParams(window.location.search);
+/* COUNTDOWN */
+const targetDate=new Date("April 3, 2026 08:00:00").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const gap=targetDate-now;
 
+document.getElementById("d").innerText=Math.floor(gap/(1000*60*60*24));
+document.getElementById("h").innerText=Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+document.getElementById("m").innerText=Math.floor((gap%(1000*60*60))/(1000*60));
+},1000);
+
+/* NAMA TAMU */
+const params=new URLSearchParams(window.location.search);
 if(params.get("to")){
 document.getElementById("guest").innerText=params.get("to");
 }
 
-if(params.get("vip")==="1"){
-document.getElementById("vipBox").style.display="block";
-}
-
-function vipWA(){
-let nama=document.getElementById("vipNama").value;
-
-if(nama===""){
-alert("Isi nama dulu");
-return;
-}
-
-let link=window.location.origin+"?to="+encodeURIComponent(nama);
-
-let pesan=
-"Kepada Yth.\nBapak/Ibu/Saudara/i\n*"+nama+"*\n_____________________\n\n"+
-"Tanpa mengurangi rasa hormat, perkenankan kami mengundang Anda untuk menghadiri acara pernikahan kami.\n\n"+
-link+"\n\nTerima Kasih\n\nSahid & Haeriyah";
-
-window.open("https://wa.me/?text="+encodeURIComponent(pesan));
-}
-
+/* WA */
 function kirimWA(){
 let nama=document.getElementById("guest").innerText;
 let link=window.location.href;
@@ -296,6 +269,21 @@ link+"\n\nTerima Kasih\n\nSahid & Haeriyah";
 
 window.open("https://wa.me/?text="+encodeURIComponent(pesan));
 }
+
+/* VIP RAHASIA TAP 3X */
+let tap=0;
+document.body.addEventListener("click",()=>{
+tap++;
+if(tap>=3){
+let nama=prompt("Nama tamu:");
+if(nama){
+let link=window.location.origin+"?to="+encodeURIComponent(nama);
+window.open("https://wa.me/?text="+encodeURIComponent(link));
+}
+tap=0;
+}
+setTimeout(()=>tap=0,1500);
+});
 </script>
 
 </body>
