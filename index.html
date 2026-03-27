@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wedding Sahid & Hae</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+html,body{margin:0;height:100%;overflow:hidden;font-family:Poppins,sans-serif;background:#f7f5f2}
+
+/* slide */
+.slide{
+position:absolute;width:100%;height:100%;
+display:flex;justify-content:center;align-items:center;
+flex-direction:column;text-align:center;
+opacity:0;transform:translateY(100%);
+transition:.6s;
+}
+.slide.active{opacity:1;transform:translateY(0)}
+
+/* floral */
+.floral{
+position:absolute;top:0;left:0;width:100%;height:100%;
+object-fit:cover;opacity:0;transform:translateY(40px);
+z-index:1;
+}
+.slide.active .floral{
+opacity:1;transform:translateY(0);
+transition:1s ease;
+}
+
+/* content */
+.content{position:relative;z-index:2}
+.script{font-family:'Great Vibes';font-size:40px;color:#7a6f4b}
+.name{font-family:'Playfair Display';font-size:28px}
+p{font-size:13px;color:#555}
+
+/* invite */
+.invite-box{max-width:320px;text-align:left}
+.invite-group{margin-bottom:20px}
+.invite-group h4{color:#7a6f4b;font-size:15px;margin-bottom:8px}
+
+/* menu */
+.menu{
+position:fixed;bottom:0;width:100%;
+display:flex;justify-content:space-around;
+background:#fff;padding:10px;z-index:10;
+}
+.menu button{border:none;background:none;font-size:20px;color:#7a6f4b}
+
+.btn{margin-top:15px;padding:10px 20px;border:none;border-radius:20px;background:#7a6f4b;color:#fff}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+<section class="slide active">
+<img src="floral.png" class="floral">
+<div class="content">
+<div class="script">The Wedding Of</div>
+<div class="name">Sahid & Hae</div>
+<button class="btn" onclick="go(1)">Open</button>
+</div>
+</section>
+
+<!-- QUOTES -->
+<section class="slide">
+<img src="floral.png" class="floral">
+<div class="content">
+<h3>Assalamualaikum Wr Wb</h3>
+<p>Tanpa mengurangi rasa hormat kami mengundang Anda</p>
+</div>
+</section>
+
+<!-- COUPLE -->
+<section class="slide">
+<img src="floral.png" class="floral">
+<div class="content">
+<div class="script">Sahid</div>
+<p>Putra ke tiga Bpk Saepudin & Ibu Liah</p>
+<div class="script">&</div>
+<div class="script">Haeriyah</div>
+<p>Putri bungsu Alm Bpk Andi & Ibu Sarmanah</p>
+</div>
+</section>
+
+<!-- MENGUNDANG -->
+<section class="slide">
+<img src="floral.png" class="floral">
+<div class="content">
+<h3>Mengundang</h3>
+
+<div class="invite-box">
+
+<div class="invite-group">
+<h4>Pihak Wanita</h4>
+<p>
+Keluarga Besar Alm. Abah Haji Sarmada (Citeras)<br>
+Keluarga Besar Alm. Abah Askum (Hegarsari)<br><br>
+Munandar, Pajli, Bukhori<br><br>
+Bpk Memed (RT 04)<br>
+Bpk Simon (RW 06)<br>
+Bpk Ustad Asmat<br><br>
+Pemuda Pemudi Citeras
+</p>
+</div>
+
+<div class="invite-group">
+<h4>Pihak Pria</h4>
+<p>
+Keluarga Besar Alm. Abah H. Rusdi<br>
+Keluarga Besar Alm. Abah Sukri<br><br>
+Bpk Mamad (RT 01)<br>
+Bpk Amit (RW 15)<br><br>
+Ustd Udin Saepudin<br>
+Ustd Abi Ade<br><br>
+Pemuda Cikasungka
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- MAPS -->
+<section class="slide">
+<img src="floral.png" class="floral">
+<div class="content">
+<h3>Lokasi</h3>
+<a class="btn" href="https://maps.google.com">Maps</a>
+</div>
+</section>
+
+<!-- RSVP -->
+<section class="slide">
+<img src="floral.png" class="floral">
+<div class="content">
+<h3>RSVP</h3>
+<a class="btn" href="https://wa.me/6281234567890">WhatsApp</a>
+</div>
+</section>
+
+<div class="menu">
+<button onclick="go(0)">🏠</button>
+<button onclick="go(1)">✨</button>
+<button onclick="go(2)">💖</button>
+<button onclick="go(3)">👥</button>
+<button onclick="go(4)">📍</button>
+<button onclick="go(5)">💬</button>
+</div>
+
+<script>
+const slides=document.querySelectorAll(".slide");
+function go(i){
+slides.forEach(s=>{
+s.classList.remove("active");
+const f=s.querySelector(".floral");
+if(f){
+f.style.opacity="0";
+f.style.transform="translateY(40px)";
+}
+});
+setTimeout(()=>slides[i].classList.add("active"),100);
+}
+</script>
+
+</body>
+</html>
