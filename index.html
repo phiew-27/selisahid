@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <style>
@@ -51,30 +51,32 @@ box-shadow:0 -2px 10px rgba(0,0,0,0.1);
 .menu button{opacity:.5;background:none;border:none;color:#7a6f4b}
 .menu button.active{opacity:1;transform:scale(1.1)}
 
-.mengundang{
-font-size:12px;
-line-height:1.7;
-max-width:320px;
+.mengundang.elegant{
+font-family:'Playfair Display', serif;
+font-size:11px;
+line-height:1.9;
+max-width:300px;
 margin:auto;
+letter-spacing:0.4px;
+}
+.mengundang.elegant b{
+display:block;
+margin-top:10px;
+margin-bottom:5px;
+font-size:13px;
+color:#7a6f4b;
 }
 
-/* COUNTDOWN */
 .countdown{
-display:flex;
-gap:12px;
-justify-content:center;
-margin-top:20px;
+display:flex;gap:12px;justify-content:center;margin-top:20px;
 }
 .box{
-background:#7a6f4b;
-color:#fff;
-padding:12px 14px;
-border-radius:12px;
+background:#7a6f4b;color:#fff;
+padding:12px;border-radius:12px;
 min-width:65px;
-box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
 .box span{display:block;font-size:20px;font-weight:bold;}
-.box small{font-size:11px;opacity:.8;}
+.box small{font-size:11px;}
 </style>
 </head>
 
@@ -84,7 +86,6 @@ box-shadow:0 5px 15px rgba(0,0,0,0.15);
 <source src="/music.mp3">
 </audio>
 
-<!-- OPENING -->
 <div class="slide active">
 <div class="floral"></div>
 <div class="content">
@@ -94,67 +95,47 @@ box-shadow:0 5px 15px rgba(0,0,0,0.15);
 
 <p>Kepada Yth:</p>
 <p><b>Bpk/Ibu/Saudara/i</b></p>
-<h3 id="guest">Nama Tamu</h3>
+<h3 id="guest">Bapak/Ibu/Saudara/i</h3>
 
 <button class="btn" onclick="go(1)">Open Invitation</button>
 </div>
 </div>
 
-<!-- QUOTES -->
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
 <h2>Assalamualaikum Wr. Wb</h2>
 <p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami.</p>
 <p style="font-style:italic;">
-"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri,
-supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup..."
 </p>
 <p><b>(QS. Ar-Rum: 21)</b></p>
 </div>
 </div>
 
-<!-- COUPLE -->
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
 <p><b>BRIDE & GROOM</b></p>
-
 <h1 class="nama">Sahid</h1>
 <p class="desc">Putra ke-3 dari Bpk Saepudin & Ibu Liah</p>
-
 <h2>&</h2>
-
 <h1 class="nama">Haeriyah</h1>
 <p class="desc">Putri bungsu dari Alm Bpk Andi & Ibu Sarmanah</p>
 </div>
 </div>
 
-<!-- ACARA -->
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-
 <h2 class="title">Akad Nikah</h2>
-<p>
-Jumat, 3 April 2026<br>
-08:00 WIB<br>
-Kp Citeras RT 04 RW 06<br>
-Desa Lewibatu, Kecamatan Rumpin
-</p>
+<p>Jumat, 3 April 2026<br>08:00 WIB</p>
 
 <h2 class="title">Resepsi</h2>
-<p>
-Jumat, 3 April 2026<br>
-Pukul 13.00 WIB s/d selesai<br>
-Kp Citeras RT 04 RW 06<br>
-Desa Lewibatu, Kecamatan Rumpin
-</p>
-
+<p>Jumat, 3 April 2026<br>Pukul 13.00 WIB s/d selesai</p>
 </div>
 </div>
 
-<!-- MAP -->
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
@@ -163,11 +144,9 @@ Desa Lewibatu, Kecamatan Rumpin
 </div>
 </div>
 
-<!-- RSVP -->
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-
 <h2 class="title">Menuju Hari Bahagia</h2>
 
 <div class="countdown">
@@ -179,55 +158,43 @@ Desa Lewibatu, Kecamatan Rumpin
 </div>
 </div>
 
-<!-- MENGUNDANG -->
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
 
 <h2 class="title">Turut Mengundang</h2>
 
-<div class="mengundang">
+<div class="mengundang elegant">
 
-<b>Pihak Wanita</b><br>
+<b>Pihak Wanita</b>
+<br>
 Keluarga besar Alm. Abah Haji Sarmada – Citeras<br>
 Keluarga besar Alm. Abah Askum – Hegarsari<br>
 Munandar (Kakanda)<br>
 Pajli (Kakanda)<br>
 Bukhori (Kakanda)<br>
-Bpk. Memed (Ketua RT 04)<br>
-Bpk. Simon (Ketua RW 06)<br>
-Bpk. Ust. Asmat (Tokoh Masyarakat)<br>
-Ketua Pemuda Citeras<br>
-Segenap Pemuda Pemudi Citeras<br><br>
 
-<b>Pihak Pria</b><br>
+<br><br>
+
+<b>Pihak Pria</b>
+<br>
 Keluarga besar Alm. Abah H. Rusdi<br>
 Keluarga besar Alm. Abah Sukri<br>
 Tokoh masyarakat Cikasungka<br>
-Bpk. Mamad (Ketua RT 01)<br>
-Bpk. Amit (Ketua RW 15)<br>
-Ust. Udin Saepudin (Pimpinan Majelis Ta’lim Aan Nuryah Bogor)<br>
-Ust. Abi Ade (Pimpinan Ponpes Al Mufid Cikasungka)<br>
-Ketua Pemuda Cikasungka<br>
-Pemuda Pemudi Cikasungka<br>
-Keluarga Diamond Ice Cream Tajur Bogor<br>
-Keluarga besar Comeback Cikasungka
 
 </div>
 
 </div>
 </div>
 
-<!-- THANKS -->
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila berkenan hadir</p>
+<p>Merupakan suatu kehormatan bagi kami apabila berkenan hadir</p>
 <h2 class="title">Sahid & Haeriyah</h2>
 </div>
 </div>
 
-<!-- MENU -->
 <div class="menu">
 <button class="active" onclick="go(0)"><span class="material-icons">mail</span></button>
 <button onclick="go(1)"><span class="material-icons">auto_awesome</span></button>
@@ -251,7 +218,6 @@ btn[i].classList.add('active');
 document.getElementById("music").play();
 }
 
-/* COUNTDOWN */
 const target=new Date("2026-04-03T08:00:00").getTime();
 setInterval(()=>{
 let now=new Date().getTime();
@@ -262,7 +228,6 @@ document.getElementById("h").innerText=Math.floor((gap%(1000*60*60*24))/(1000*60
 document.getElementById("m").innerText=Math.floor((gap%(1000*60*60))/(1000*60));
 },1000);
 
-/* NAMA TAMU */
 const p=new URLSearchParams(window.location.search);
 if(p.get("to")){
 document.getElementById("guest").innerText=p.get("to");
