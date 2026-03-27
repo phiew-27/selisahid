@@ -9,7 +9,6 @@
 <style>
 body{margin:0;font-family:Poppins;overflow:hidden;background:#f7f5f2}
 
-/* SLIDE */
 .slide{
 position:absolute;width:100%;height:100%;
 display:flex;justify-content:center;align-items:center;
@@ -19,43 +18,29 @@ transition:.6s;overflow:hidden;
 }
 .slide.active{opacity:1;transform:translateY(0)}
 
-/* BUNGA */
 .floral{
 position:absolute;top:0;left:0;width:100%;height:100%;
 background:url('/floral.png') center/cover no-repeat;
-opacity:0;
-transform:translateX(-120px) scale(1.1);
+opacity:0;transform:translateX(-120px) scale(1.1);
 filter:blur(12px);
 z-index:1;
 }
 .slide.active .floral{
-opacity:1;
-transform:translateX(0) scale(1);
-filter:blur(0);
-transition:1.5s ease;
+opacity:1;transform:translateX(0) scale(1);
+filter:blur(0);transition:1.5s ease;
 }
 
-/* CONTENT */
-.content{
-position:relative;z-index:2;
-opacity:0;transform:translateY(30px);
-}
-.slide.active .content{
-opacity:1;transform:translateY(0);
-transition:.8s ease;
-}
+.content{position:relative;z-index:2;}
 
 h1{font-family:'Great Vibes';color:#7a6f4b;font-size:42px}
-p{color:#555}
+p{color:#555;line-height:1.6}
 
-/* BUTTON */
 .btn{
 margin-top:20px;padding:10px 20px;
 border:none;border-radius:20px;
 background:#7a6f4b;color:white;
 }
 
-/* MENU */
 .menu{
 position:fixed;bottom:0;width:100%;
 display:flex;justify-content:space-around;
@@ -64,69 +49,48 @@ box-shadow:0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .menu button{
-opacity:0.5;
-transition:0.3s;
-padding:5px;
-border-radius:10px;
+opacity:0.5;transition:0.3s;
+padding:5px;border-radius:10px;
 background:none;border:none;color:#7a6f4b;
 }
 
 .menu button.active{
-opacity:1;
-background:#7a6f4b;
-color:#fff;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+opacity:1;background:#7a6f4b;color:#fff;
 transform:scale(1.1);
 }
 
 .material-icons{font-size:24px}
 
-/* OPENING ANIMASI */
 .left{opacity:0;transform:translateX(-120px)}
 .right{opacity:0;transform:translateX(120px)}
 .left2{opacity:0;transform:translateX(-120px)}
 
-.slide.active .left{opacity:1;transform:translateX(0);transition:1s ease;}
-.slide.active .right{opacity:1;transform:translateX(0);transition:1s ease 0.3s;}
-.slide.active .left2{opacity:1;transform:translateX(0);transition:1s ease 0.6s;}
+.slide.active .left{opacity:1;transform:translateX(0);transition:1s;}
+.slide.active .right{opacity:1;transform:translateX(0);transition:1s 0.3s;}
+.slide.active .left2{opacity:1;transform:translateX(0);transition:1s 0.6s;}
 
-/* COUPLE */
-.nama{
-font-family:'Great Vibes', cursive;
-font-size:42px;
-color:#7a6f4b;
-margin:10px 0;
-}
-.desc{
-font-size:14px;color:#555;line-height:1.6;
-}
+.nama{font-family:'Great Vibes';font-size:42px;color:#7a6f4b;}
+.desc{font-size:14px;}
 
-/* TITLE */
-.title{
-font-family:'Great Vibes', cursive;
-font-size:32px;
-color:#7a6f4b;
-margin-bottom:10px;
-}
+.title{font-family:'Great Vibes';font-size:32px;color:#7a6f4b;}
 
-/* COUNTDOWN */
-.countdown{
-display:flex;gap:10px;justify-content:center;margin:15px 0;
-}
-.box{
-background:#7a6f4b;color:#fff;padding:10px;border-radius:10px;min-width:60px;
-}
+.countdown{display:flex;gap:10px;justify-content:center;margin:15px 0;}
+.box{background:#7a6f4b;color:#fff;padding:10px;border-radius:10px;min-width:60px;}
 .box span{display:block;font-size:18px;font-weight:bold;}
 .box small{font-size:10px;}
 
-h3{margin-top:5px;font-weight:500;}
+.ayat{
+font-style:italic;
+max-width:300px;
+margin:15px auto;
+}
 </style>
 </head>
 
 <body>
 
 <audio id="music" loop>
-<source src="/music.mp3" type="audio/mp3">
+<source src="/music.mp3">
 </audio>
 
 <!-- OPENING -->
@@ -137,7 +101,7 @@ h3{margin-top:5px;font-weight:500;}
 <h1 class="right">&</h1>
 <h1 class="left2">Haeriyah</h1>
 
-<p style="margin-top:20px">Kepada Yth:</p>
+<p>Kepada Yth:</p>
 <p><b>Bpk/Ibu/Saudara/i</b></p>
 <h3 id="guest">Nama Tamu</h3>
 
@@ -149,9 +113,21 @@ h3{margin-top:5px;font-weight:500;}
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
+
 <h2>Assalamualaikum Wr. Wb</h2>
-<p>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan..."</p>
-<p><i>(QS. Ar-Rum: 21)</i></p>
+
+<p>
+Dengan memohon rahmat dan ridho Allah SWT,
+kami bermaksud menyelenggarakan acara pernikahan putra-putri kami.
+</p>
+
+<p class="ayat">
+"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri,
+supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+</p>
+
+<p><b>(QS. Ar-Rum: 21)</b></p>
+
 </div>
 </div>
 
@@ -159,6 +135,7 @@ h3{margin-top:5px;font-weight:500;}
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
+
 <p><b>BRIDE & GROOM</b></p>
 
 <h1 class="nama">Sahid</h1>
@@ -168,6 +145,7 @@ h3{margin-top:5px;font-weight:500;}
 
 <h1 class="nama">Haeriyah</h1>
 <p class="desc">Putri bungsu dari Alm. Bpk. Andi dan Ibu Sarmanah</p>
+
 </div>
 </div>
 
@@ -175,11 +153,23 @@ h3{margin-top:5px;font-weight:500;}
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<h2 class="title">Akad</h2>
-<p>Jumat, 3 April 2026<br>08:00 WIB<br>Kp Citeras RT 04 RW 06</p>
+
+<h2 class="title">Akad Nikah</h2>
+<p>
+Jumat, 3 April 2026<br>
+Pukul 08.00 WIB s/d selesai<br>
+Kp Citeras RT 04 RW 06<br>
+Desa Lewibatu, Kecamatan Rumpin
+</p>
 
 <h2 class="title">Resepsi</h2>
-<p>Jumat, 3 April 2026<br>13:00 WIB<br>Kp Citeras RT 04 RW 06</p>
+<p>
+Jumat, 3 April 2026<br>
+Pukul 13.00 WIB s/d selesai<br>
+Kp Citeras RT 04 RW 06<br>
+Desa Lewibatu, Kecamatan Rumpin
+</p>
+
 </div>
 </div>
 
@@ -188,7 +178,7 @@ h3{margin-top:5px;font-weight:500;}
 <div class="floral"></div>
 <div class="content">
 <h2 class="title">Lokasi</h2>
-<a class="btn" href="https://maps.google.com">Google Maps</a>
+<a class="btn" href="https://maps.app.goo.gl/Yzfy7y3YXkCc1UiH7">Buka Google Maps</a>
 </div>
 </div>
 
@@ -196,6 +186,7 @@ h3{margin-top:5px;font-weight:500;}
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
+
 <h2 class="title">RSVP</h2>
 
 <div class="countdown">
@@ -204,7 +195,8 @@ h3{margin-top:5px;font-weight:500;}
 <div class="box"><span id="m">0</span><small>Menit</small></div>
 </div>
 
-<a class="btn" href="https://wa.me/6281234567890">Konfirmasi</a>
+<a class="btn" onclick="kirimWA()">Konfirmasi Kehadiran</a>
+
 </div>
 </div>
 
@@ -212,13 +204,40 @@ h3{margin-top:5px;font-weight:500;}
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<h2 class="title">Mengundang</h2>
+
+<h2 class="title">Turut Mengundang</h2>
 
 <p><b>Pihak Wanita</b></p>
-<p>Keluarga besar Alm Abah Haji Sarmada Citeras<br>Keluarga besar Alm Abah Askum Hegarsari</p>
+<p>
+Keluarga besar Alm. Abah Haji Sarmada – Citeras<br>
+Keluarga besar Alm. Abah Askum – Hegarsari<br>
+Munandar (Kakanda)<br>
+Pajli (Kakanda)<br>
+Bukhori (Kakanda)<br>
+Bpk. Memed (Ketua RT 04)<br>
+Bpk. Simon (Ketua RW 06)<br>
+Bpk. Ust. Asmat (Tokoh Masyarakat)<br>
+Ketua Pemuda Citeras<br>
+Segenap Pemuda Pemudi Citeras
+</p>
+
+<br>
 
 <p><b>Pihak Pria</b></p>
-<p>Keluarga besar Alm Abah H. Rusdi<br>Keluarga besar Alm Abah Sukri</p>
+<p>
+Keluarga besar Alm. Abah H. Rusdi<br>
+Keluarga besar Alm. Abah Sukri<br>
+Tokoh masyarakat Cikasungka<br>
+Bpk. Mamad (Ketua RT 01)<br>
+Bpk. Amit (Ketua RW 15)<br>
+Ust. Udin Saepudin<br>
+Ust. Abi Ade<br>
+Ketua Pemuda Cikasungka<br>
+Pemuda Pemudi Cikasungka<br>
+Keluarga Diamond Ice Cream Tajur Bogor<br>
+Keluarga besar Comeback Cikasungka
+</p>
+
 </div>
 </div>
 
@@ -226,9 +245,16 @@ h3{margin-top:5px;font-weight:500;}
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<p>Merupakan suatu kehormatan dan kebahagiaan apabila Bpk/Ibu/Saudara/i berkenan hadir</p>
-<p><b>Salam Hormat Kami Kedua Mempelai</b></p>
+
+<p>
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
+Bpk/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+</p>
+
+<p><b>Wassalamualaikum Wr. Wb</b></p>
+
 <h2 class="title">Sahid & Haeriyah</h2>
+
 </div>
 </div>
 
@@ -251,28 +277,34 @@ const buttons=document.querySelectorAll('.menu button');
 function go(i){
 slides.forEach(s=>s.classList.remove('active'));
 buttons.forEach(b=>b.classList.remove('active'));
-
 slides[i].classList.add('active');
 buttons[i].classList.add('active');
-
 document.getElementById("music").play();
 }
 
-/* COUNTDOWN */
 const targetDate=new Date("April 3, 2026 08:00:00").getTime();
 setInterval(function(){
 const now=new Date().getTime();
 const d=targetDate-now;
-
 document.getElementById("d").innerHTML=Math.floor(d/(1000*60*60*24));
 document.getElementById("h").innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60));
 document.getElementById("m").innerHTML=Math.floor((d%(1000*60*60))/(1000*60));
 },1000);
 
-/* NAMA TAMU */
 const params=new URLSearchParams(window.location.search);
 const to=params.get("to");
 if(to){document.getElementById("guest").innerHTML=to;}
+
+function kirimWA(){
+let nama=document.getElementById("guest").innerText;
+let link=window.location.href;
+
+let pesan=
+"Kepada Yth.\nBapak/Ibu/Saudara/i\n*"+nama+"*\n\n"+
+"Berikut link undangan kami:\n"+link;
+
+window.open("https://wa.me/?text="+encodeURIComponent(pesan));
+}
 </script>
 
 </body>
