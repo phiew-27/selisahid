@@ -36,7 +36,6 @@ p{color:#555;line-height:1.6}
 .nama{font-family:'Great Vibes';font-size:42px;color:#7a6f4b}
 .desc{font-size:14px}
 
-/* BUTTON */
 .btn{
 margin-top:20px;
 padding:12px 26px;
@@ -44,12 +43,9 @@ border:none;
 border-radius:30px;
 background:linear-gradient(135deg,#8c7b52,#6f623f);
 color:#fff;
-font-size:14px;
-letter-spacing:1px;
-box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* MENU */
+/* MENU (TIDAK DIUBAH) */
 .menu{
 position:fixed;bottom:0;width:100%;
 display:flex;justify-content:space-around;
@@ -109,6 +105,24 @@ animation:fadeText 0.8s ease forwards;
 
 @keyframes fadeText{
 to{opacity:1;transform:translateY(0);}
+}
+
+/* BACKGROUND TIAP SLIDE */
+.slide:nth-of-type(1) .floral{background:url('/bg1.jpg') center/cover no-repeat;}
+.slide:nth-of-type(2) .floral{background:url('/bg2.jpg') center/cover no-repeat;}
+.slide:nth-of-type(3) .floral{background:url('/bg3.jpg') center/cover no-repeat;}
+.slide:nth-of-type(4) .floral{background:url('/bg4.jpg') center/cover no-repeat;}
+.slide:nth-of-type(5) .floral{background:url('/bg5.jpg') center/cover no-repeat;}
+.slide:nth-of-type(6) .floral{background:url('/bg6.jpg') center/cover no-repeat;}
+.slide:nth-of-type(7) .floral{background:url('/bg7.jpg') center/cover no-repeat;}
+.slide:nth-of-type(8) .floral{background:url('/bg8.jpg') center/cover no-repeat;}
+
+.slide.active .floral{
+animation:zoomBg 12s ease-in-out infinite alternate;
+}
+@keyframes zoomBg{
+from{transform:scale(1);}
+to{transform:scale(1.1);}
 }
 </style>
 </head>
@@ -200,6 +214,7 @@ to{opacity:1;transform:translateY(0);}
 <div class="content">
 <h2 class="title">Turut Mengundang</h2>
 <div class="mengundang elegant">
+
 <b>Pihak Wanita</b><br>
 Keluarga besar Alm. Abah Haji Sarmada – Citeras<br>
 Keluarga besar Alm. Abah Askum – Hegarsari<br>
@@ -218,12 +233,13 @@ Keluarga besar Alm. Abah Sukri<br>
 Tokoh masyarakat Cikasungka<br>
 Bpk. Mamad (Ketua RT 01)<br>
 Bpk. Amit (Ketua RW 15)<br>
-Ust. Udin Saepudin<br>
-Ust. Abi Ade<br>
+Ust. Udin Saepudin (Pimpinan Majelis Ta’lim Aan Nuryah Bogor)<br>
+Ust. Abi Ade (Pimpinan Ponpes Al Mufid Cikasungka)<br>
 Ketua Pemuda Cikasungka<br>
 Pemuda Pemudi Cikasungka<br>
 Keluarga Diamond Ice Cream Tajur Bogor<br>
 Keluarga besar Comeback Cikasungka
+
 </div>
 </div>
 </div>
