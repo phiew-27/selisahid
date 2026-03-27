@@ -1,25 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kirim Undangan</title>
-
-<style>
-body{font-family:Poppins;background:#f7f5f2;display:flex;justify-content:center;align-items:center;height:100vh;margin:0}
-.box{background:#fff;padding:25px;border-radius:15px;box-shadow:0 0 20px rgba(0,0,0,0.1);text-align:center;width:280px}
-input{width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;margin-top:10px}
-button{margin-top:15px;padding:10px;width:100%;border:none;border-radius:10px;background:#7a6f4b;color:#fff}
-</style>
-</head>
-
-<body>
-
-<div class="box">
-<h3>Kirim Undangan</h3>
-<input id="nama" placeholder="Nama Tamu">
-<button onclick="kirim()">Kirim WA</button>
-</div>
-
 <script>
 function kirim(){
 let nama=document.getElementById("nama").value;
@@ -31,14 +9,26 @@ return;
 
 let link="https://sahidhaeriyah.netlify.app/?to="+encodeURIComponent(nama);
 
-let pesan=
-"Kepada Yth.\nBapak/Ibu/Saudara/i\n*"+nama+"*\n\n"+
-"Tanpa mengurangi rasa hormat, kami mengundang Anda untuk menghadiri acara pernikahan kami.\n\n"+
-link+"\n\nTerima kasih\n\nSahid & Haeriyah";
+let pesan =
+"Kepada Yth.\n"+
+"Bapak/Ibu/Saudara/i\n"+
+"*"+nama+"*\n"+
+"_____________________\n\n"+
+
+"Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami.\n\n"+
+
+"*Berikut link undangan kami*, untuk info lengkap dari acara, bisa kunjungi :\n\n"+
+
+link+"\n\n"+
+
+"Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa restu kepada putra putri kami.\n\n"+
+
+"Terima Kasih\n\n"+
+
+"Hormat kami,\n"+
+"Sahid & Haeriyah\n"+
+"_____________________";
 
 window.location.href="https://wa.me/?text="+encodeURIComponent(pesan);
 }
 </script>
-
-</body>
-</html>
