@@ -1,3 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirim Undangan</title>
+
+<style>
+body{
+font-family:Poppins;
+background:#f7f5f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.box{
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+text-align:center;
+width:90%;
+max-width:300px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+button{
+margin-top:15px;
+padding:12px;
+width:100%;
+border:none;
+border-radius:10px;
+background:#7a6f4b;
+color:#fff;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h3>Kirim Undangan</h3>
+
+<input type="text" id="nama" placeholder="Masukkan nama tamu">
+
+<button onclick="kirim()">Kirim ke WhatsApp</button>
+</div>
+
 <script>
 function kirim(){
 let nama=document.getElementById("nama").value;
@@ -32,3 +90,6 @@ link+"\n\n"+
 window.location.href="https://wa.me/?text="+encodeURIComponent(pesan);
 }
 </script>
+
+</body>
+</html>
