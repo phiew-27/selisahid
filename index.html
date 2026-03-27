@@ -36,7 +36,7 @@ p{color:#555;line-height:1.6}
 .nama{font-family:'Great Vibes';font-size:42px;color:#7a6f4b}
 .desc{font-size:14px}
 
-/* BUTTON PREMIUM */
+/* BUTTON */
 .btn{
 margin-top:20px;
 padding:12px 26px;
@@ -47,13 +47,9 @@ color:#fff;
 font-size:14px;
 letter-spacing:1px;
 box-shadow:0 8px 20px rgba(0,0,0,0.15);
-transition:0.3s;
-}
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 12px 25px rgba(0,0,0,0.2);
 }
 
+/* MENU */
 .menu{
 position:fixed;bottom:0;width:100%;
 display:flex;justify-content:space-around;
@@ -98,6 +94,22 @@ min-width:65px;
 iframe{
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
+
+/* ANIMASI TEKS */
+.slide.active .content > *{
+opacity:0;
+transform:translateY(20px);
+animation:fadeText 0.8s ease forwards;
+}
+.slide.active .content > *:nth-child(1){animation-delay:0.2s;}
+.slide.active .content > *:nth-child(2){animation-delay:0.4s;}
+.slide.active .content > *:nth-child(3){animation-delay:0.6s;}
+.slide.active .content > *:nth-child(4){animation-delay:0.8s;}
+.slide.active .content > *:nth-child(5){animation-delay:1s;}
+
+@keyframes fadeText{
+to{opacity:1;transform:translateY(0);}
+}
 </style>
 </head>
 
@@ -119,7 +131,7 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 <p><b>Bpk/Ibu/Saudara/i</b></p>
 <h3 id="guest">Bapak/Ibu/Saudara/i</h3>
 
-<button class="btn" onclick="go(1)">Open Invitation</button>
+<button class="btn" onclick="openInv()">Open Invitation</button>
 </div>
 </div>
 
@@ -141,12 +153,9 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 <div class="floral"></div>
 <div class="content">
 <p><b>BRIDE & GROOM</b></p>
-
 <h1 class="nama">Sahid</h1>
 <p class="desc">Putra ke-3 dari Bpk Saepudin & Ibu Liah</p>
-
 <h2>&</h2>
-
 <h1 class="nama">Haeriyah</h1>
 <p class="desc">Putri bungsu dari Alm Bpk Andi & Ibu Sarmanah</p>
 </div>
@@ -156,23 +165,10 @@ box-shadow:0 10px 25px rgba(0,0,0,0.15);
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-
 <h2 class="title">Akad Nikah</h2>
-<p>
-Jumat, 3 April 2026<br>
-08:00 WIB<br>
-Kp Citeras RT 04 RW 06<br>
-Desa Lewibatu, Kecamatan Rumpin
-</p>
-
+<p>Jumat, 3 April 2026<br>08:00 WIB<br>Kp Citeras RT 04 RW 06<br>Desa Lewibatu, Kecamatan Rumpin</p>
 <h2 class="title">Resepsi</h2>
-<p>
-Jumat, 3 April 2026<br>
-Pukul 13.00 WIB s/d selesai<br>
-Kp Citeras RT 04 RW 06<br>
-Desa Lewibatu, Kecamatan Rumpin
-</p>
-
+<p>Jumat, 3 April 2026<br>Pukul 13.00 WIB s/d selesai<br>Kp Citeras RT 04 RW 06<br>Desa Lewibatu, Kecamatan Rumpin</p>
 </div>
 </div>
 
@@ -181,16 +177,7 @@ Desa Lewibatu, Kecamatan Rumpin
 <div class="floral"></div>
 <div class="content">
 <h2 class="title">Lokasi</h2>
-
-<iframe
-src="https://www.google.com/maps?q=Kp+Citeras+RT+04+RW+06+Lewibatu+Rumpin&output=embed"
-width="90%"
-height="260"
-style="border:0;border-radius:15px;margin-top:15px;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
+<iframe src="https://www.google.com/maps?q=Kp+Citeras+RT+04+RW+06+Lewibatu+Rumpin&output=embed" width="90%" height="260"></iframe>
 </div>
 </div>
 
@@ -198,15 +185,12 @@ loading="lazy">
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-
 <h2 class="title">Menuju Hari Bahagia</h2>
-
 <div class="countdown">
 <div class="box"><span id="d">0</span><small>Hari</small></div>
 <div class="box"><span id="h">0</span><small>Jam</small></div>
 <div class="box"><span id="m">0</span><small>Menit</small></div>
 </div>
-
 </div>
 </div>
 
@@ -214,13 +198,9 @@ loading="lazy">
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-
 <h2 class="title">Turut Mengundang</h2>
-
 <div class="mengundang elegant">
-
-<b>Pihak Wanita</b>
-<br>
+<b>Pihak Wanita</b><br>
 Keluarga besar Alm. Abah Haji Sarmada – Citeras<br>
 Keluarga besar Alm. Abah Askum – Hegarsari<br>
 Munandar (Kakanda)<br>
@@ -230,26 +210,21 @@ Bpk. Memed (Ketua RT 04)<br>
 Bpk. Simon (Ketua RW 06)<br>
 Bpk. Ust. Asmat (Tokoh Masyarakat)<br>
 Ketua Pemuda Citeras<br>
-Segenap Pemuda Pemudi Citeras
+Segenap Pemuda Pemudi Citeras<br><br>
 
-<br><br>
-
-<b>Pihak Pria</b>
-<br>
+<b>Pihak Pria</b><br>
 Keluarga besar Alm. Abah H. Rusdi<br>
 Keluarga besar Alm. Abah Sukri<br>
 Tokoh masyarakat Cikasungka<br>
 Bpk. Mamad (Ketua RT 01)<br>
 Bpk. Amit (Ketua RW 15)<br>
-Ust. Udin Saepudin (Pimpinan Majelis Ta’lim Aan Nuryah Bogor)<br>
-Ust. Abi Ade (Pimpinan Ponpes Al Mufid Cikasungka)<br>
+Ust. Udin Saepudin<br>
+Ust. Abi Ade<br>
 Ketua Pemuda Cikasungka<br>
 Pemuda Pemudi Cikasungka<br>
 Keluarga Diamond Ice Cream Tajur Bogor<br>
 Keluarga besar Comeback Cikasungka
-
 </div>
-
 </div>
 </div>
 
@@ -284,13 +259,33 @@ btn.forEach(b=>b.classList.remove('active'));
 slides[i].classList.add('active');
 btn[i].classList.add('active');
 document.querySelector("audio").play();
+
+let items = slides[i].querySelectorAll('.content > *');
+items.forEach(el=>{
+el.style.animation="none";
+el.offsetHeight;
+el.style.animation="";
+});
+}
+
+let autoSlide;
+function openInv(){
+go(1);
+let i=1;
+autoSlide=setInterval(()=>{
+i++;
+if(i>=slides.length){
+clearInterval(autoSlide);
+return;
+}
+go(i);
+},4000);
 }
 
 const target=new Date("2026-04-03T08:00:00").getTime();
 setInterval(()=>{
 let now=new Date().getTime();
 let gap=target-now;
-
 document.getElementById("d").innerText=Math.floor(gap/(1000*60*60*24));
 document.getElementById("h").innerText=Math.floor((gap%(1000*60*60*24))/(1000*60*60));
 document.getElementById("m").innerText=Math.floor((gap%(1000*60*60))/(1000*60));
@@ -300,13 +295,6 @@ const p=new URLSearchParams(window.location.search);
 if(p.get("to")){
 document.getElementById("guest").innerText=p.get("to");
 }
-
-/* AUTO OPENING */
-window.addEventListener("load", ()=>{
-setTimeout(()=>{
-go(1);
-}, 3000);
-});
 </script>
 
 </body>
