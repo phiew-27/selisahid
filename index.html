@@ -15,159 +15,231 @@ position:absolute;width:100%;height:100%;
 display:flex;justify-content:center;align-items:center;
 flex-direction:column;text-align:center;
 opacity:0;transform:translateY(100%);
-transition:.6s;
+transition:.6s;overflow:hidden;
 }
 .slide.active{opacity:1;transform:translateY(0)}
 
 /* BUNGA */
 .floral{
-position:absolute;width:100%;height:100%;
+position:absolute;top:0;left:0;width:100%;height:100%;
 background:url('/floral.png') center/cover no-repeat;
-opacity:0;transform:translateX(-100px);filter:blur(10px);
+opacity:0;
+transform:translateX(-120px) scale(1.1);
+filter:blur(12px);
+z-index:1;
 }
 .slide.active .floral{
-opacity:1;transform:translateX(0);filter:blur(0);transition:1s;
+opacity:1;
+transform:translateX(0) scale(1);
+filter:blur(0);
+transition:1.5s ease;
 }
 
-/* ANIMASI */
-.fade-up{opacity:0;transform:translateY(30px)}
-.slide.active .fade-up{opacity:1;transform:translateY(0);transition:0.8s}
-.delay1{transition-delay:0.2s}
-.delay2{transition-delay:0.4s}
-.delay3{transition-delay:0.6s}
+/* CONTENT */
+.content{
+position:relative;z-index:2;
+opacity:0;transform:translateY(30px);
+}
+.slide.active .content{
+opacity:1;transform:translateY(0);
+transition:.8s ease;
+}
 
-/* FONT */
-h1{font-family:'Great Vibes';color:#7a6f4b}
-.title{font-family:'Great Vibes';font-size:28px;color:#7a6f4b}
-.desc{font-size:14px}
+h1{font-family:'Great Vibes';color:#7a6f4b;font-size:42px}
+p{color:#555}
+
+/* BUTTON */
+.btn{
+margin-top:10px;padding:10px 20px;
+border:none;border-radius:20px;
+background:#7a6f4b;color:white;
+}
 
 /* MENU */
 .menu{
 position:fixed;bottom:0;width:100%;
-display:flex;background:#fff;
+display:flex;justify-content:space-around;
+background:#fff;padding:10px;
+box-shadow:0 -2px 10px rgba(0,0,0,0.1);
 }
-.nav-item{
-flex:1;text-align:center;padding:5px;
-opacity:0.5;cursor:pointer;
-}
-.nav-item.active{opacity:1;color:#7a6f4b}
 
-/* VIP BOX */
-#vipMenu{
-display:none;
-position:fixed;
-bottom:80px;
-left:50%;
-transform:translateX(-50%);
-background:#fff;
-padding:15px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,0,0,0.2);
+.menu button{
+opacity:0.5;
+transition:0.3s;
+padding:5px;border-radius:10px;
+background:none;border:none;color:#7a6f4b;
 }
+
+.menu button.active{
+opacity:1;background:#7a6f4b;color:#fff;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+transform:scale(1.1);
+}
+
+.material-icons{font-size:24px}
+
+/* OPENING ANIMASI */
+.left{opacity:0;transform:translateX(-120px)}
+.right{opacity:0;transform:translateX(120px)}
+.left2{opacity:0;transform:translateX(-120px)}
+
+.slide.active .left{opacity:1;transform:translateX(0);transition:1s;}
+.slide.active .right{opacity:1;transform:translateX(0);transition:1s 0.3s;}
+.slide.active .left2{opacity:1;transform:translateX(0);transition:1s 0.6s;}
+
+/* FONT */
+.nama{font-family:'Great Vibes';font-size:42px;color:#7a6f4b;}
+.desc{font-size:14px;line-height:1.6;}
+
+.title{font-family:'Great Vibes';font-size:30px;color:#7a6f4b;}
+
+/* COUNTDOWN */
+.countdown{display:flex;gap:10px;justify-content:center;margin:10px;}
+.box{background:#7a6f4b;color:#fff;padding:10px;border-radius:10px;}
 </style>
 </head>
 
 <body>
 
 <audio id="music" loop>
-<source src="/music.mp3">
+<source src="/music.mp3" type="audio/mp3">
 </audio>
 
 <!-- OPENING -->
 <div class="slide active">
 <div class="floral"></div>
-<h1 class="fade-up">Sahid & Haeriyah</h1>
-<p class="fade-up delay1">Kepada Yth</p>
-<h3 id="guest" class="fade-up delay2">Nama Tamu</h3>
-<button onclick="go(1)">Buka</button>
+<div class="content">
+<h1 class="left">Sahid</h1>
+<h1 class="right">&</h1>
+<h1 class="left2">Haeriyah</h1>
+
+<p>Kepada Yth:</p>
+<p><b>Bpk/Ibu/Saudara/i</b></p>
+<h3 id="guest">Nama Tamu</h3>
+
+<button class="btn" onclick="go(1)">Open Invitation</button>
+</div>
 </div>
 
 <!-- QUOTES -->
 <div class="slide">
 <div class="floral"></div>
-<h2 class="title fade-up">Assalamualaikum</h2>
-<p class="fade-up delay1">Dengan memohon rahmat Allah SWT</p>
+<div class="content">
+<h2 class="title">Assalamualaikum Wr. Wb</h2>
+<p>"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan..."</p>
+</div>
 </div>
 
 <!-- COUPLE -->
 <div class="slide">
 <div class="floral"></div>
-<h1 class="fade-up">Sahid</h1>
-<p class="desc fade-up delay1">Putra Bpk Saepudin</p>
-<h1 class="fade-up delay2">Haeriyah</h1>
+<div class="content">
+<p><b>BRIDE & GROOM</b></p>
+
+<h1 class="nama">Sahid</h1>
+<p class="desc">Putra ke-3 dari Bpk. Saepudin & Ibu Liah</p>
+
+<h2>&</h2>
+
+<h1 class="nama">Haeriyah</h1>
+<p class="desc">Putri bungsu dari Alm. Bpk. Andi & Ibu Sarmanah</p>
+</div>
 </div>
 
 <!-- ACARA -->
 <div class="slide">
 <div class="floral"></div>
-<h2 class="title fade-up">Akad</h2>
-<p class="fade-up delay1">3 April 2026</p>
+<div class="content">
+<h2 class="title">Akad Nikah</h2>
+<p class="desc">Jumat, 3 April 2026<br>08.00 WIB</p>
+
+<h2 class="title">Resepsi</h2>
+<p class="desc">13.00 WIB</p>
+</div>
 </div>
 
 <!-- MAP -->
 <div class="slide">
 <div class="floral"></div>
-<h2 class="title fade-up">Lokasi</h2>
-<a href="https://maps.app.goo.gl/Yzfy7y3YXkCc1UiH7">Buka Maps</a>
+<div class="content">
+<h2 class="title">Lokasi</h2>
+<a class="btn" href="https://maps.google.com">Maps</a>
+</div>
 </div>
 
 <!-- RSVP -->
 <div class="slide">
 <div class="floral"></div>
-<h2 class="title fade-up">Ucapan</h2>
-<input id="namaTamu">
-<button onclick="shareWA()">Kirim WA</button>
+<div class="content">
+<h2 class="title">Ucapan & Doa</h2>
+
+<div class="countdown">
+<div class="box"><span id="d">0</span>Hari</div>
+<div class="box"><span id="h">0</span>Jam</div>
+<div class="box"><span id="m">0</span>Menit</div>
+</div>
+
+<input id="nama" placeholder="Nama"><br>
+<textarea id="pesan" placeholder="Ucapan"></textarea><br>
+<button class="btn" onclick="kirim()">Kirim</button>
+
+<div id="list"></div>
+</div>
+</div>
+
+<!-- MENGUNDANG -->
+<div class="slide">
+<div class="floral"></div>
+<div class="content">
+<h2 class="title">Mengundang</h2>
+<p class="desc">Keluarga besar dll...</p>
+</div>
+</div>
+
+<!-- THANKS -->
+<div class="slide">
+<div class="floral"></div>
+<div class="content">
+<p>Merupakan suatu kehormatan...</p>
+<h2 class="title">Sahid & Haeriyah</h2>
+</div>
 </div>
 
 <!-- MENU -->
 <div class="menu">
-<div class="nav-item active" onclick="go(0)">🏠</div>
-<div class="nav-item" onclick="go(1)">✨</div>
-<div class="nav-item" onclick="go(2)">❤️</div>
-<div class="nav-item" onclick="go(3)">📅</div>
-<div class="nav-item" onclick="go(4)">📍</div>
-<div class="nav-item" onclick="go(5)">💬</div>
-</div>
-
-<!-- VIP MENU -->
-<div id="vipMenu">
-<input id="namaVIP" placeholder="Nama">
-<button onclick="shareWA()">Kirim</button>
+<button class="active" onclick="go(0)">●</button>
+<button onclick="go(1)">●</button>
+<button onclick="go(2)">●</button>
+<button onclick="go(3)">●</button>
+<button onclick="go(4)">●</button>
+<button onclick="go(5)">●</button>
+<button onclick="go(6)">●</button>
+<button onclick="go(7)">●</button>
 </div>
 
 <script>
 const slides=document.querySelectorAll('.slide');
-const nav=document.querySelectorAll('.nav-item');
+const buttons=document.querySelectorAll('.menu button');
 
 function go(i){
 slides.forEach(s=>s.classList.remove('active'));
-nav.forEach(n=>n.classList.remove('active'));
+buttons.forEach(b=>b.classList.remove('active'));
 slides[i].classList.add('active');
-nav[i].classList.add('active');
+buttons[i].classList.add('active');
+document.getElementById("music").play();
 }
 
-/* VIP */
-const p=new URLSearchParams(window.location.search);
-if(p.get("vip")==="1"){
-document.getElementById("vipMenu").style.display="block";
-}
+/* countdown */
+setInterval(()=>{
+let d=new Date("April 3 2026")-new Date();
+document.getElementById("d").innerHTML=Math.floor(d/86400000);
+},1000);
 
-/* NAMA TAMU */
-if(p.get("to")){
-document.getElementById("guest").innerHTML=p.get("to");
-}
-
-/* WA AUTO */
-function shareWA(){
-let nama=document.getElementById("namaVIP").value;
-
-let link=window.location.origin+"?to="+encodeURIComponent(nama);
-
-let text=
-"Kepada Yth\n"+nama+"\n\n"+
-"Link Undangan:\n"+link;
-
-window.open("https://wa.me/?text="+encodeURIComponent(text));
+/* komentar */
+function kirim(){
+let n=document.getElementById("nama").value;
+let p=document.getElementById("pesan").value;
+document.getElementById("list").innerHTML+="<p><b>"+n+"</b><br>"+p+"</p>";
 }
 </script>
 
