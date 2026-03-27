@@ -300,6 +300,13 @@ const p=new URLSearchParams(window.location.search);
 if(p.get("to")){
 document.getElementById("guest").innerText=p.get("to");
 }
+
+/* AUTO OPENING */
+window.addEventListener("load", ()=>{
+setTimeout(()=>{
+go(1);
+}, 3000);
+});
 </script>
 
 </body>
