@@ -58,8 +58,23 @@ max-width:320px;
 margin:auto;
 }
 
-.countdown{display:flex;gap:10px;margin:15px 0}
-.box{background:#7a6f4b;color:#fff;padding:10px;border-radius:10px}
+/* COUNTDOWN */
+.countdown{
+display:flex;
+gap:12px;
+justify-content:center;
+margin-top:20px;
+}
+.box{
+background:#7a6f4b;
+color:#fff;
+padding:12px 14px;
+border-radius:12px;
+min-width:65px;
+box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+.box span{display:block;font-size:20px;font-weight:bold;}
+.box small{font-size:11px;opacity:.8;}
 </style>
 </head>
 
@@ -89,21 +104,13 @@ margin:auto;
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-
 <h2>Assalamualaikum Wr. Wb</h2>
-
-<p>
-Dengan memohon rahmat dan ridho Allah SWT,
-kami bermaksud menyelenggarakan acara pernikahan putra-putri kami.
-</p>
-
+<p>Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami.</p>
 <p style="font-style:italic;">
 "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri,
 supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
 </p>
-
 <p><b>(QS. Ar-Rum: 21)</b></p>
-
 </div>
 </div>
 
@@ -111,7 +118,6 @@ supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih 
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-
 <p><b>BRIDE & GROOM</b></p>
 
 <h1 class="nama">Sahid</h1>
@@ -121,7 +127,6 @@ supaya kamu merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih 
 
 <h1 class="nama">Haeriyah</h1>
 <p class="desc">Putri bungsu dari Alm Bpk Andi & Ibu Sarmanah</p>
-
 </div>
 </div>
 
@@ -162,15 +167,15 @@ Desa Lewibatu, Kecamatan Rumpin
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<h2 class="title">RSVP</h2>
+
+<h2 class="title">Menuju Hari Bahagia</h2>
 
 <div class="countdown">
-<div class="box"><span id="d">0</span></div>
-<div class="box"><span id="h">0</span></div>
-<div class="box"><span id="m">0</span></div>
+<div class="box"><span id="d">0</span><small>Hari</small></div>
+<div class="box"><span id="h">0</span><small>Jam</small></div>
+<div class="box"><span id="m">0</span><small>Menit</small></div>
 </div>
 
-<a class="btn" onclick="kirimWA()">Kirim Undangan</a>
 </div>
 </div>
 
@@ -184,23 +189,29 @@ Desa Lewibatu, Kecamatan Rumpin
 <div class="mengundang">
 
 <b>Pihak Wanita</b><br>
-Keluarga besar Alm Abah Haji Sarmada<br>
-Keluarga besar Alm Abah Askum<br>
-Munandar, Pajli, Bukhori<br>
-Bpk Memed (RT 04)<br>
-Bpk Simon (RW 06)<br>
-Ust Asmat<br>
-Pemuda Citeras<br><br>
+Keluarga besar Alm. Abah Haji Sarmada – Citeras<br>
+Keluarga besar Alm. Abah Askum – Hegarsari<br>
+Munandar (Kakanda)<br>
+Pajli (Kakanda)<br>
+Bukhori (Kakanda)<br>
+Bpk. Memed (Ketua RT 04)<br>
+Bpk. Simon (Ketua RW 06)<br>
+Bpk. Ust. Asmat (Tokoh Masyarakat)<br>
+Ketua Pemuda Citeras<br>
+Segenap Pemuda Pemudi Citeras<br><br>
 
 <b>Pihak Pria</b><br>
-Keluarga besar Alm H Rusdi<br>
-Keluarga besar Alm Sukri<br>
+Keluarga besar Alm. Abah H. Rusdi<br>
+Keluarga besar Alm. Abah Sukri<br>
 Tokoh masyarakat Cikasungka<br>
-Bpk Mamad (RT 01)<br>
-Bpk Amit (RW 15)<br>
-Ust Udin Saepudin<br>
-Ust Abi Ade<br>
-Pemuda Cikasungka
+Bpk. Mamad (Ketua RT 01)<br>
+Bpk. Amit (Ketua RW 15)<br>
+Ust. Udin Saepudin (Pimpinan Majelis Ta’lim Aan Nuryah Bogor)<br>
+Ust. Abi Ade (Pimpinan Ponpes Al Mufid Cikasungka)<br>
+Ketua Pemuda Cikasungka<br>
+Pemuda Pemudi Cikasungka<br>
+Keluarga Diamond Ice Cream Tajur Bogor<br>
+Keluarga besar Comeback Cikasungka
 
 </div>
 
@@ -211,7 +222,7 @@ Pemuda Cikasungka
 <div class="slide">
 <div class="floral"></div>
 <div class="content">
-<p>Merupakan suatu kehormatan bagi kami apabila berkenan hadir</p>
+<p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila berkenan hadir</p>
 <h2 class="title">Sahid & Haeriyah</h2>
 </div>
 </div>
@@ -241,10 +252,10 @@ document.getElementById("music").play();
 }
 
 /* COUNTDOWN */
-const targetDate=new Date("April 3, 2026 08:00:00").getTime();
+const target=new Date("2026-04-03T08:00:00").getTime();
 setInterval(()=>{
-const now=new Date().getTime();
-const gap=targetDate-now;
+let now=new Date().getTime();
+let gap=target-now;
 
 document.getElementById("d").innerText=Math.floor(gap/(1000*60*60*24));
 document.getElementById("h").innerText=Math.floor((gap%(1000*60*60*24))/(1000*60*60));
@@ -252,38 +263,10 @@ document.getElementById("m").innerText=Math.floor((gap%(1000*60*60))/(1000*60));
 },1000);
 
 /* NAMA TAMU */
-const params=new URLSearchParams(window.location.search);
-if(params.get("to")){
-document.getElementById("guest").innerText=params.get("to");
+const p=new URLSearchParams(window.location.search);
+if(p.get("to")){
+document.getElementById("guest").innerText=p.get("to");
 }
-
-/* WA */
-function kirimWA(){
-let nama=document.getElementById("guest").innerText;
-let link=window.location.href;
-
-let pesan=
-"Kepada Yth.\nBapak/Ibu/Saudara/i\n*"+nama+"*\n_____________________\n\n"+
-"Tanpa mengurangi rasa hormat, perkenankan kami mengundang Anda untuk menghadiri acara pernikahan kami.\n\n"+
-link+"\n\nTerima Kasih\n\nSahid & Haeriyah";
-
-window.open("https://wa.me/?text="+encodeURIComponent(pesan));
-}
-
-/* VIP RAHASIA TAP 3X */
-let tap=0;
-document.body.addEventListener("click",()=>{
-tap++;
-if(tap>=3){
-let nama=prompt("Nama tamu:");
-if(nama){
-let link=window.location.origin+"?to="+encodeURIComponent(nama);
-window.open("https://wa.me/?text="+encodeURIComponent(link));
-}
-tap=0;
-}
-setTimeout(()=>tap=0,1500);
-});
 </script>
 
 </body>
